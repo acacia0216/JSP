@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ex04_bottom.jsp페이지</title>
+</head>
+<body>
+<hr>
+<b><%="ex04_bottom.jsp페이지" %></b>
+<%="이건 얇게나오나?" %>
+</body>
+</html>
