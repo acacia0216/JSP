@@ -4,7 +4,7 @@ public class MemberVO {
 	private String id;
 	private String pw;
 	private String name;
-	
+
 	public MemberVO(String id, String pw, String name) {
 		this.id = id;
 		this.pw = pw;
@@ -34,6 +34,5 @@ public class MemberVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 }
