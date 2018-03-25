@@ -5,7 +5,7 @@ public class Student {
 	private String mail;
 	private String kor;
 	private String eng;
-	private String mat;
+	private String met;
 	private String sic;
 	private String sos;
 	private String total;
@@ -21,14 +21,14 @@ public class Student {
 
 
 
-	public Student(String scn, String mail, String kor, String eng, String mat, String sic, String sos, String total,
+	public Student(String scn, String mail, String kor, String eng, String met, String sic, String sos, String total,
 			String tic, String acm, String code) {
 		super();
 		this.scn = scn;
 		this.mail = mail;
 		this.kor = kor;
 		this.eng = eng;
-		this.mat = mat;
+		this.met = met;
 		this.sic = sic;
 		this.sos = sos;
 		this.total = total;
@@ -103,14 +103,14 @@ public class Student {
 
 
 
-	public String getMat() {
-		return mat;
+	public String getMet() {
+		return met;
 	}
 
 
 
-	public void setMat(String mat) {
-		this.mat = mat;
+	public void setMet(String met) {
+		this.met = met;
 	}
 
 
@@ -172,7 +172,9 @@ public class Student {
 	public void setCode(String code) {
 		this.code = code;
 	}
-
+	public String toString() {
+		return getCode()+getAcm()+getTic();
+	}
 
 
 	

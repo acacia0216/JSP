@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="kr.co.bit.day3.Student"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -21,7 +24,7 @@ td {
 </style>
 <body>
 	<%
-		
+		List<Student> al = (ArrayList) session.getAttribute("file");
 	%>
 	<table>
 		<tr>
@@ -34,29 +37,30 @@ td {
 			<td>국사</td>
 			<td>총점</td>
 			<td>담임</td>
-			<td>성취</td>
-			<td>지역</td>
+			<td>성취도</td>
+			<td>지역코드</td>
 		</tr>
 		<%
-			for (int i = 0; i > 100; i++) {
+			for (int i = 0; i < 100; i++) {
 		%>
 		<tr>
-			<td>al.get(i).getscn</td>
-			<td>al.get(i).getmail</td>
-			<td>al.get(i).getkor</td>
-			<td>al.get(i).geteng</td>
-			<td>al.get(i).getmet</td>
-			<td>al.get(i).getsic</td>
-			<td>al.get(i).getsos</td>
-			<td>al.get(i).gettotal</td>
-			<td>al.get(i).gettic</td>
-			<td>al.get(i).getacm</td>
-			<td>al.get(i).getcode</td>
+			<td><%=al.get(i).getScn()%></td>
+			<td><%=al.get(i).getMail()%></td>
+			<td><%=al.get(i).getKor()%></td>
+			<td><%=al.get(i).getEng()%></td>
+			<td><%=al.get(i).getMet()%></td>
+			<td><%=al.get(i).getSic()%></td>
+			<td><%=al.get(i).getSos()%></td>
+			<td><%=al.get(i).getTotal()%></td>
+			<td><%=al.get(i).getTic()%></td>
+			<td><%=al.get(i).getAcm()%></td>
+			<td><%=al.get(i).getCode()%></td>
 		</tr>
-	</table>
-	<%
-		}
-	%>
 
+		<%
+			}
+		%>
+	</table>
+	
 </body>
 </html>

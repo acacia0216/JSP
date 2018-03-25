@@ -16,30 +16,28 @@
 </head>
 <body>
 	<%
-		String path = application.getRealPath("WEB-INF\\file\\Abc1115.txt");
+		String path = application.getRealPath("META-INF\\file\\Abc1115.txt");
 		File file = new File(path);
 		//out.println(path);//실제 저장장소 출력
 		Reader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
-		Student s = new Student();
-		String read = "";
-		List<Student> al = new ArrayList<Student>();
+		ArrayList<Student> al = new ArrayList<Student>();
+
+		while (true) {
+			String read = br.readLine();
+			if (read == null) {
+				break;
+			}
+			al.add(new Student(read.substring(0, 6), read.substring(6, 10), read.substring(10, 13),
+					read.substring(13, 16), read.substring(16, 19), read.substring(19, 22), read.substring(22, 25),
+					read.substring(25, 28), read.substring(28, 29), read.substring(29, 30),
+					read.substring(30, 31)));
+		}
 		
-		while(read != null)
-		{
-		read = br.readLine();
-		StringTokenizer st = new StringTokenizer(read," ");
-		int count=st.countTokens();
-		
-		for(int i=0; i<count; i++)
-		{
-			al.add(new Student());
-		}
-		}
-		for(int i=0; i<al.size(); i++)
-		{
-			out.print(al.get(i));
-		}
-	%>
+		session.setAttribute("file", al);
+		response.sendRedirect("list.jsp");
+	
+		%>
+	
 </body>
 </html>
