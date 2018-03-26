@@ -16,7 +16,7 @@
 </head>
 <body>
 	<%
-		String path = application.getRealPath("META-INF\\file\\Abc1115.txt");
+		String path = application.getRealPath("WEB-INF\\file\\Abc1115.txt");
 		File file = new File(path);
 		//out.println(path);//실제 저장장소 출력
 		Reader fr = new FileReader(file);
