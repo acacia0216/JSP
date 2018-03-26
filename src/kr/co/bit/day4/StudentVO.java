@@ -2,7 +2,7 @@ package kr.co.bit.day4;
 
 public class StudentVO {
 	private String stdNo;
-	private String name;
+	private String email;
 	private int kor;
 	private int eng;
 	private int math;
@@ -17,11 +17,11 @@ public class StudentVO {
 		super();
 	}
 
-	public StudentVO(String stdNo, String name, int kor, int eng, int math, int sci, int history, int total,
+	public StudentVO(String stdNo, String email, int kor, int eng, int math, int sci, int history, int total,
 			String mgrCode, String accCode, String localCode) {
 		super();
 		this.stdNo = stdNo;
-		this.name = name;
+		this.email = email;
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
@@ -41,12 +41,12 @@ public class StudentVO {
 		this.stdNo = stdNo;
 	}
 
-	public String getName() {
-		return name;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getKor() {
@@ -119,6 +119,13 @@ public class StudentVO {
 
 	public void setLocalCode(String localCode) {
 		this.localCode = localCode;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentVO [stdNo=" + stdNo + ", email=" + email + ", kor=" + kor + ", eng=" + eng + ", math=" + math
+				+ ", sci=" + sci + ", history=" + history + ", total=" + total + ", mgrCode=" + mgrCode + ", accCode="
+				+ accCode + ", localCode=" + localCode + "]";
 	}
 	
 	

@@ -17,6 +17,30 @@
 
 ArrayList<StudentVO> list = (ArrayList<StudentVO>)session.getAttribute("list");
 out.print(list.size());
+
+StringBuffer sb = new StringBuffer("<table>");
+StudentVO vo = null;
+
+for(int i=0; i<list.size(); i++)
+{
+	vo = list.get(i);
+	//out.print(list.get(i)+"<br>");
+	sb.append("<tr>");
+	sb.append("<td>"+vo.getStdNo()+"</td>");
+	sb.append("<td>"+vo.getEmail()+"</td>");
+	sb.append("<td>"+vo.getKor()+"</td>");
+	sb.append("<td>"+vo.getEng()+"</td>");
+	sb.append("<td>"+vo.getMath()+"</td>");
+	sb.append("<td>"+vo.getSci()+"</td>");
+	sb.append("<td>"+vo.getHistory()+"</td>");
+	sb.append("<td>"+vo.getTotal()+"</td>");
+	sb.append("<td>"+vo.getMgrCode()+"</td>");
+	sb.append("<td>"+vo.getAccCode()+"</td>");
+	sb.append("<td>"+vo.getLocalCode()+"</td>");
+	sb.append("</tr>");
+}
+sb.append("</table>");
+out.print(sb.toString());
 %>
 </body>
 </html>

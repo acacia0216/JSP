@@ -1,3 +1,4 @@
+<%@page import="kr.co.bit.day4.StudentVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.co.bit.day4.FileDataService"%>
 <%@page import="java.util.Date"%>
@@ -21,9 +22,9 @@ FileDataService fds = new FileDataService();
 
 String path = application.getRealPath("WEB-INF/file/Abc1115.txt");
 
-ArrayList list = (ArrayList)fds.getFileData(path);
-session.setAttribute("list", list);
+ArrayList<StudentVO> list = (ArrayList<StudentVO>)fds.getFileData(path);
 
+session.setAttribute("list", list);
 response.sendRedirect("result.jsp");
 %>
 
