@@ -33,7 +33,6 @@
 					read.substring(25, 28), read.substring(28, 29), read.substring(29, 30),
 					read.substring(30, 31)));
 		}
-		al.sort()
 		
 		session.setAttribute("file", al);
 		response.sendRedirect("list.jsp");

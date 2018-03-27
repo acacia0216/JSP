@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>bottom.jsp</title>
+<title>read페이지</title>
 </head>
 <body>
-<hr>
-bottom.jsp입니다.<p>
-작성자는<b><%= %></b>입니다.
+<h2>아이디 검색</h2>
+<form action="storage.jsp" method="post">
+아이디 <input type="text" name="id">
+<input type="submit" value="검색">
+</form>
+<a href="regist_member.jsp">회원 등록</a>
 </body>
 </html>

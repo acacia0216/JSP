@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>bottom.jsp</title>
+<title>우편번호 검색</title>
 </head>
 <body>
-<hr>
-bottom.jsp입니다.<p>
-작성자는<b><%= %></b>입니다.
+<% String zip = request.getParameter("zip");
+if(zip == null || zip == "")
+	response.sendRedirect("check_zip.jsp?zipCode="+zip+"&confirm=f");
+else{
+response.sendRedirect("check_zip.jsp?zipCode="+zip+"&confirm=t");
+}
+%>
 </body>
 </html>
