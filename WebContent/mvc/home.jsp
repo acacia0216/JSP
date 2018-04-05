@@ -10,7 +10,7 @@
 Home<br>
 <a href="./controller?cmd=viewRegist">등록</a>
 <a href="./controller?cmd=searchAll">전체조회</a>
-<form action="../../controller?cmd=search" method="post">
+<form action="./controller?cmd=search" method="post">
 아이디<input type="text" name="id">
 <input type="submit" value="조회">
 </form>

@@ -30,7 +30,7 @@
 		alert(cmd);
 		/* 		var server_page = "id_service.jsp?cmd="+cmd;
 		 */
-		var server_page = "./day7/mvc/id_service.jsp";
+		var server_page = "./mvc/id_service.jsp";
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -47,7 +47,7 @@
 		/* 		xhr.open("GET",server_page,true); // server.jsp에 get방식으로 보낸다. true는 비동기식을 의미. 
 				xhr.send();
 		 */
-		data = "cmd=" + cmd;
+		var data = "cmd=" + cmd;
 		xhr.open("POST", server_page, true); // server.jsp에 get방식으로 보낸다. true는 비동기식을 의미.
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded") // post 방식으로 보내주기 위해선 설정해줘야하는 기본 헤더값 (form action 할때는 디폴트로 이미 설정 되어있지만 xhr는 직접적어줘야한다.) 
 		xhr.send(data);
@@ -123,9 +123,15 @@
 </script>
 <body>
 	<%
-		MemberVO vo = (MemberVO) session.getAttribute("MemberVO");
+		MemberVO vo = (MemberVO) request.getAttribute("member");
+		String message = "";
+		String temp = request.getParameter("id");
+		if(temp != null)
+		{
+			message = temp+"회원이 존재하지 않습니다.";
+		}
 		if (vo == null) {
-			vo = new MemberVO("", "", "", "", "", "", "", new String[] { "", "", "", "" }, "", "");//초기값 넣어주면 null예외 안생김
+			vo = new MemberVO("", "", "", "", "", "", "", new String[] { "0", "", "", "" }, "0", "0");//초기값 넣어주면 null예외 안생김
 		}
 	%>
 
@@ -143,7 +149,7 @@
 			<tr>
 				<td>패스워드</td>
 				<td><input type="password" name="pw" id="pw" value="<%=vo.getPw()%>"></td>
-				<td></td>
+				<td><span id="nomember"><%=message %></span></td>
 				<td><input type="hidden" name="isPwCheck" id="isPwCheck" value="false"></td>
 			</tr>
 			<tr>
